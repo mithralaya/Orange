@@ -1,0 +1,59 @@
+<%- include layout/header.ejs  %>    
+    <div class="container"> 
+           <h1 class="jumbo">Welcome to <b class="grayLight"><%= title %></b></h1>     
+            <div class="well">
+                <form class="form-horizontal" method="post" action="/admin/login/auth">
+                    <fieldset>
+                        <legend>Register</legend>
+                        <div class="control-group">
+                            <label class="control-label" for="inputFirstName">First Name:</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="inputFirstName" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inputLastName">Last Name:</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="inputLastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inputBusinessName">Date of birth:</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="inputBusinessName" placeholder="__/__/____">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inputEmail">Email:</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="inputEmail" placeholder="example@example.com">
+                            </div>
+                        </div>                        
+                        <div class="control-group">
+                            <label class="control-label" for="inputPassword">Password:</label>
+                            <div class="controls">
+                                <input type="password" class="input-xlarge" id="inputPassword" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inputConfirmPassword">Confirm Password:</label>
+                            <div class="controls">
+                                <input type="password" class="input-xlarge" id="inputConfirmPassword" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inputAboutMe">About me:</label>
+                            <div class="controls">
+                                <textarea rows="5" cols="5" name="aboutMe" id="inputAboutMe"></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-warning btn-large">Sign up</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>     
+        </div>
+<%- include layout/footer.ejs  %>

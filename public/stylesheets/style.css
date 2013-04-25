@@ -1,7 +1,9 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.content {
+  margin-top: 30px;
 }
-a {
-  color: #00b7ff;
+.register {
+  margin-left: 10px;
+}
+.footer a {
+  margin-right: 15px;
 }

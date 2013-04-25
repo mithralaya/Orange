@@ -5,7 +5,6 @@
 
 var express = require('express')
         , routes = require('./routes')
-        , user = require('./routes/user')
         , http = require('http')
         , path = require('path');
 
@@ -19,8 +18,8 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
+app.use(express.cookieParser('OhWomaniya'));
+app.use(express.session({secret: "Lot of love"}));
 app.use(app.router);
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -29,9 +28,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
+var routesIndex = require('./routes/index')
+app.get('/', routesIndex.index);
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+
+//ADMIN ROUTES
+var accessChecker = function(req, res, next) {
+    if (req.session.user) {
+        next();
+    } else {
+        res.redirect('/admin/login');
+    }
+}
+var     routesAdmin = require('./routes/admin'),
+        routesAdminLogin = require('./routes/admin/login'),
+        routesAdminRegister = require('./routes/admin/register');
+
+app.get('/admin/login', routesAdminLogin.login);
+app.get('/admin/register', routesAdminRegister.register);
+app.get('/admin', accessChecker, routesAdmin.index);
+
+
 
 http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));

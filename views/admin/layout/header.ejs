@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href='/stylesheets/bootstrap.min.css' />
+    <link rel="stylesheet" type="text/css" href='/stylesheets/font-awesome.min.css' />
+    <link rel="stylesheet" type="text/css" href='//code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css' />
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href='/stylesheets/font-awesome-ie7.min.css' /><![endif]-->
+
+
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js" language="javascript"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" language="javascript"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.2/jquery-ui.js" language="javascript"></script>
+
+  </head>
+  <body>
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <a class="brand" href="#"><%= title %></a>
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                    <li <% if(selector == 'login') {%> class="active"<% } %>><a href="/admin/login"><i class="icon icon-lock"></i>Sign in</a></li>
+                    <li class="divider-vertical"></li>
+                    <li <% if(selector == 'register') {%> class="active"<% } %>><a href="/admin/register"><i class="icon icon-key"></i>Register</a></li>
+                    <li class="divider-vertical"></li>                    
+                </ul>
+            </div>
+        </div>
+        <div class="content">
