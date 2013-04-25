@@ -1,43 +1,43 @@
 <%- include layout/header.ejs  %>    
     <div class="container"> 
             <div class="well">
-                <form class="form-horizontal" method="post" action="/admin/login/auth">
+                <form class="form-horizontal" method="post" action="/admin/register/save">
                     <fieldset>
                         <legend>Register</legend>
                         <div class="control-group">
                             <label class="control-label" for="inputFirstName">First Name:</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge" id="inputFirstName" placeholder="First Name">
+                                <input type="text" class="input-xlarge" name="firstName" id="inputFirstName" placeholder="First Name">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="inputLastName">Last Name:</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge" id="inputLastName" placeholder="Last Name">
+                                <input type="text" class="input-xlarge" name="lastName" id="inputLastName" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="inputDOB">Date of birth:</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge datePicker" id="inputDOB" placeholder="__/__/____">
+                                <input type="text" class="input-xlarge datePicker" name="dob" id="inputDOB" placeholder="__/__/____">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="inputEmail">Email:</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge" id="inputEmail" placeholder="example@example.com">
+                                <input type="text" class="input-xlarge" id="inputEmail" name ="email" placeholder="example@example.com">
                             </div>
-                        </div>                        
+                        </div>
                         <div class="control-group">
                             <label class="control-label" for="inputPassword">Password:</label>
                             <div class="controls">
-                                <input type="password" class="input-xlarge" id="inputPassword" placeholder="Password">
+                                <input type="password" class="input-xlarge" id="inputPassword" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="inputConfirmPassword">Confirm Password:</label>
                             <div class="controls">
-                                <input type="password" class="input-xlarge" id="inputConfirmPassword" placeholder="Confirm Password">
+                                <input type="password" class="input-xlarge" id="inputConfirmPassword" name="confirmPassword" placeholder="Confirm Password">
                             </div>
                         </div>
                         <div class="control-group">

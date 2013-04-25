@@ -46,6 +46,7 @@ var     routesAdmin = require('./routes/admin'),
 
 app.get('/admin/login', routesAdminLogin.login);
 app.get('/admin/register', routesAdminRegister.register);
+app.post('/admin/register/save', routesAdminRegister.save);
 app.get('/admin', accessChecker, routesAdmin.index);
 
 

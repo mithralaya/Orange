@@ -10,7 +10,7 @@ console.log('building schema for Merchant');
 var mongoose = require('mongoose');
 var Location = new mongoose.Schema({
     _id: {type: global.mongoose.Schema.ObjectId, index: true},
-    addL1: {type: String, require: true, validate: validate('len', 5, 150)},
+    addL1: {type: String, require: true},
     addL2: {type: String, require: false},
     addL3: {type: String, require: false},
     city: {type: String, require: true},
