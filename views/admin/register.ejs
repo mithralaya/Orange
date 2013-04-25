@@ -1,6 +1,5 @@
 <%- include layout/header.ejs  %>    
     <div class="container"> 
-           <h1 class="jumbo">Welcome to <b class="grayLight"><%= title %></b></h1>     
             <div class="well">
                 <form class="form-horizontal" method="post" action="/admin/login/auth">
                     <fieldset>
@@ -18,9 +17,9 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="inputBusinessName">Date of birth:</label>
+                            <label class="control-label" for="inputDOB">Date of birth:</label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge" id="inputBusinessName" placeholder="__/__/____">
+                                <input type="text" class="input-xlarge datePicker" id="inputDOB" placeholder="__/__/____">
                             </div>
                         </div>
                         <div class="control-group">
