@@ -7,8 +7,9 @@ var express = require('express')
         , routes = require('./routes')
         , http = require('http')
         , path = require('path')
-        , db = require('./lib/mongo.js')
-        , config = require('./config/config.js');
+        , db = require('./lib/mongo')
+        , config = require('./config/config')
+        , passport = require('passport');
 
 var app = express();
 db.init();
@@ -22,6 +23,10 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('OhWomaniya'));
 app.use(express.session({secret: "Lot of love"}));
+
+//Passport Initialize
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(app.router);
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -47,6 +52,7 @@ var     routesAdmin = require('./routes/admin'),
         routesAdminRegister = require('./routes/admin/register');
 
 app.get('/admin/login', routesAdminLogin.login);
+app.post('/admin/login/auth', routesAdminLogin.auth);
 app.get('/admin/register', routesAdminRegister.register);
 app.post('/admin/register/save', routesAdminRegister.save);
 app.get('/admin', accessChecker, routesAdmin.index);
