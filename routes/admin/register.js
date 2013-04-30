@@ -14,16 +14,25 @@ exports.register = function(req, res) {
 };
 
 exports.save = function(req, res) {
-    console.log(req);
-    console.log(req.body.dob);
-    console.log(new Date(Date.parse(parseDate(req.body.dob))));
-    res.render('admin/register', {title: 'OhWomaniya', selector: 'register'});        
+    var dob = new Date(Date.parse(parseDate(req.body.dob)));    
+    var user  = require('../../model/user');
+    var crypto = require('crypto');
+    var shasum = crypto.createHash('sha1');
+    shasum.update(req.body.password);
+    user.password = shasum.digest('hex');
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
+    user.dob = dob;
+    user.email = req.body.email;
+    user.aboutMe = req.body.aboutMe;
+    user.userType = 'admin';
+    user.approved = new Date();
+    res.render('admin/register', {title: 'OhWomaniya', selector: 'register'});
 };
 
 // parse a date in yyyy-mm-dd format
 function parseDate(input) {
   var parts = input.match(/(\d+)/g);
   // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
-  console.log(parts);
   return new Date(parts[2], parts[1]-1, parts[0], 00, 00, 00, 00); // months are 0-based
 }

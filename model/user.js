@@ -6,7 +6,7 @@ console.log('building schema for User');
 
 var mongoose = require('mongoose');
 var User = new mongoose.Schema({
-    _id: {type: global.mongoose.Schema.ObjectId, index: true},
+    _id: {type: mongoose.Schema.ObjectId, index: true},
     firstName: {type: String, require: true},
     lastName: {type: String, require: true},
     dob: {type: Date, require: true},

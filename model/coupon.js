@@ -9,7 +9,7 @@ console.log('building schema for Coupon');
 
 var mongoose = require('mongoose');
 var Coupon = new mongoose.Schema({
-    _id: {type: global.mongoose.Schema.ObjectId, index: true},
+    _id: {type: mongoose.Schema.ObjectId, index: true},
     title: {type: String, require: true},
     desc: {type: String, require: true},
     SD: {type: Date, require: true},

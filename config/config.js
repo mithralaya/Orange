@@ -4,10 +4,11 @@
  */
 
 
-var Config = {
+module.exports = {
     site: {
         name: 'ohwomaniya',
-        description: "Ramya's million dollor idea!"
+        description: "Ramya's million dollor idea!",
+        passwordSalt: ""
     },
     mongoDb: {
         dbHost: 'localhost',
@@ -16,5 +17,3 @@ var Config = {
         dbName: 'ohwomaniya'
     }
 }
-
-module.export = Config;

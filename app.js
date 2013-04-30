@@ -6,10 +6,12 @@
 var express = require('express')
         , routes = require('./routes')
         , http = require('http')
-        , path = require('path');
+        , path = require('path')
+        , db = require('./lib/mongo.js')
+        , config = require('./config/config.js');
 
 var app = express();
-
+db.init();
 // all environments
 app.set('port', process.env.PORT || 9000);
 app.set('views', __dirname + '/views');

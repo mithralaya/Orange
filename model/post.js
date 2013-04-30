@@ -8,7 +8,7 @@ console.log('building schema for Post');
 
 var mongoose = require('mongoose');
 var Post = new mongoose.Schema({
-    _id: {type: global.mongoose.Schema.ObjectId, index: true},
+    _id: {type: mongoose.Schema.ObjectId, index: true},
     title: {type: String, require: true},
     urlScheme: {type: String, require: true, unique:true, index: true},
     excerpt: {type: String, require: false},
