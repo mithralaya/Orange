@@ -15,10 +15,11 @@ exports.register = function(req, res) {
 
 exports.save = function(req, res) {
     var dob = new Date(Date.parse(parseDate(req.body.dob)));    
-    var user  = require('../../model/user');
+    var User  = require('../../model/user');
     var crypto = require('crypto');
     var shasum = crypto.createHash('sha1');
     shasum.update(req.body.password);
+    var user = new User;
     user.password = shasum.digest('hex');
     user.firstName = req.body.firstName;
     user.lastName = req.body.lastName;
@@ -27,6 +28,8 @@ exports.save = function(req, res) {
     user.aboutMe = req.body.aboutMe;
     user.userType = 'admin';
     user.approved = new Date();
+    user.save();
+    console.log(user);
     res.render('admin/register', {title: 'OhWomaniya', selector: 'register'});
 };
 
