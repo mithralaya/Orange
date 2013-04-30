@@ -16,7 +16,7 @@ console.log(req.session);
 
 exports.auth = function(req, res) {
     var passportConf = require('../../lib/passport');
-    
+    passportConf.init;
     passport.authenticate('local', {successRedirect: '/admin/',
         failureRedirect: '/admin/login',
         failureFlash: true});
