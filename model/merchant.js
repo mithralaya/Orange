@@ -12,7 +12,7 @@ var Merchant = new mongoose.Schema({
     _id: {type: mongoose.Schema.ObjectId, index: true},
     name: {type: String, require: true},
     desc: {type: String, require: true},
-    user: {type: String, require: true},
+    user: {type: String, require: true, index: true},
     date: {type: Date, default: Date.now, require: true}
 });
 

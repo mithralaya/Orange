@@ -14,8 +14,8 @@ var Coupon = new mongoose.Schema({
     desc: {type: String, require: true},
     SD: {type: Date, require: true},
     ED: {type: Date, require: true},
-    merchant: {type: String, require: true},
-    location: {type: [], require: true},
+    merchant: {type: String, require: true, index: true},
+    location: {type: [], require: true, index: true},
     date: {type: Date, default: Date.now, require: true}
 });
 

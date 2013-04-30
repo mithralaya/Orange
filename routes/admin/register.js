@@ -19,6 +19,8 @@ exports.save = function(req, res) {
     var crypto = require('crypto');
     var shasum = crypto.createHash('sha1');
     shasum.update(req.body.password);
+    
+    //Create Admin User
     var user = new User;
     user.password = shasum.digest('hex');
     user.firstName = req.body.firstName;
