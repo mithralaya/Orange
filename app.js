@@ -7,12 +7,12 @@ var express = require('express')
         , routes = require('./routes')
         , http = require('http')
         , path = require('path')
-        , db = require('./lib/mongo')
+        //, db = require('./lib/mongo')
         , config = require('./config/config')
         , passport = require('passport');
 
 var app = express();
-db.init();
+//db.init();
 // all environments
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
