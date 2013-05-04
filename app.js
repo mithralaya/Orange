@@ -12,7 +12,7 @@ var express = require('express')
         , passport = require('passport');
 
 var app = express();
-db.init();
+//db.init();
 // all environments
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
